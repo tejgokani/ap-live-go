@@ -4,7 +4,7 @@
 version: 1
 template:
   repo: tejgokani/anything-pipeline
-  ref: 5cd39108a1fffe03352c32317c1ac8c8241acdb3
+  ref: 94f5bcbfa0a9805cdd3b65d18d4747cf46993b6b
 plan:
   units:
   - path: .
