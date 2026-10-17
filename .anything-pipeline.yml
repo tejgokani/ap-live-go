@@ -1,0 +1,25 @@
+# anything-pipeline plan. `plan:` is rewritten by `ap init`; `overrides:` is yours and is preserved.
+# Overrides: units.<path>.verify {flavor, vars.pm} replaces detection; verify / units.<path>.inputs set
+# verify.yml inputs (node-version, test-command, ...).
+version: 1
+template:
+  repo: tejgokani/anything-pipeline
+  ref: 5cd39108a1fffe03352c32317c1ac8c8241acdb3
+plan:
+  units:
+  - path: .
+    kinds:
+    - go-service
+    verify:
+      flavor: go
+      vars: {}
+    ship:
+      pipeline: ship-app
+      flavor: container
+  always:
+  - verify
+  - agent-gate
+  - harden
+overrides: {}
+disabled: []
+ejected: []
